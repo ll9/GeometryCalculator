@@ -44,6 +44,7 @@
             this.ySourceCoordinatesTextBox = new System.Windows.Forms.TextBox();
             this.yTargetCoordinatesTextBox = new System.Windows.Forms.TextBox();
             this.xYTransformViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.CalcXYButton = new System.Windows.Forms.Button();
             sourceProjectionLabel = new System.Windows.Forms.Label();
             targetProjectionLabel = new System.Windows.Forms.Label();
             xSourceCoordinatesLabel = new System.Windows.Forms.Label();
@@ -56,6 +57,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.CalcXYButton);
             this.groupBox1.Controls.Add(sourceProjectionLabel);
             this.groupBox1.Controls.Add(this.sourceProjectionComboBox);
             this.groupBox1.Controls.Add(targetProjectionLabel);
@@ -192,6 +194,16 @@
             // 
             this.xYTransformViewModelBindingSource.DataSource = typeof(GeometryCalculator.ViewModels.XYTransformViewModel);
             // 
+            // CalcXYButton
+            // 
+            this.CalcXYButton.Location = new System.Drawing.Point(618, 119);
+            this.CalcXYButton.Name = "CalcXYButton";
+            this.CalcXYButton.Size = new System.Drawing.Size(75, 23);
+            this.CalcXYButton.TabIndex = 12;
+            this.CalcXYButton.Text = "Berechnen";
+            this.CalcXYButton.UseVisualStyleBackColor = true;
+            this.CalcXYButton.Click += new System.EventHandler(this.CalcXYButton_Click);
+            // 
             // MockView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -219,5 +231,6 @@
         private System.Windows.Forms.TextBox xTargetCoordinatesTextBox;
         private System.Windows.Forms.TextBox ySourceCoordinatesTextBox;
         private System.Windows.Forms.TextBox yTargetCoordinatesTextBox;
+        private System.Windows.Forms.Button CalcXYButton;
     }
 }
