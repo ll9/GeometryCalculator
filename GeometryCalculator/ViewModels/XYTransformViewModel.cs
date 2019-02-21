@@ -9,9 +9,9 @@ namespace GeometryCalculator.ViewModels
 {
     public class XYTransformViewModel
     {
-        [DisplayName("X")]
+        [DisplayName("Quelle-X")]
         public double XSourceCoordinates { get; set; }
-        [DisplayName("Y")]
+        [DisplayName("Quelle-Y")]
         public double YSourceCoordinates { get; set; }
 
         [DisplayName("Quellprojektion")]
@@ -19,9 +19,9 @@ namespace GeometryCalculator.ViewModels
         [DisplayName("Zielprojektion")]
         public string TargetProjection { get; set; }
 
-        [DisplayName("X")]
+        [DisplayName("Ziel-X")]
         public double XTargetCoordinates { get; set; }
-        [DisplayName("Y")]
+        [DisplayName("Ziel-Y")]
         public double YTargetCoordinates { get; set; }
     }
 }

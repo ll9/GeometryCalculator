@@ -73,6 +73,7 @@
     <EmbeddedResource Include="Views\MockView.resx">
       <DependentUpon>MockView.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\GeometryCalculator.ViewModels.XYTransformViewModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
