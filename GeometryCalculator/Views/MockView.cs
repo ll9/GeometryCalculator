@@ -18,13 +18,16 @@ namespace GeometryCalculator.Views
     public partial class MockView : Form
     {
         private XYTransformViewModel _xYTransformViewModel;
+        private WktTransformViewModel _wktTransformViewModel;
 
         public MockView()
         {
             InitializeComponent();
 
             _xYTransformViewModel = new XYTransformViewModel { SourceProjection = 4326, TargetProjection = 3857 };
+            _wktTransformViewModel = new WktTransformViewModel { SourceProjection = 4326, TargetProjection = 3857, WktSource = "POINT (10 46)" };
             xYTransformViewModelBindingSource.DataSource = _xYTransformViewModel;
+            wktTransformViewModelBindingSource.DataSource = _wktTransformViewModel;
         }
 
         private void CalcXYButton_Click(object sender, EventArgs e)
@@ -41,14 +44,9 @@ namespace GeometryCalculator.Views
             _xYTransformViewModel.YTargetCoordinates = xy[1];
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void CalcWktButton_Click(object sender, EventArgs e)
         {
-            t();
-        }
-
-        public void t()
-        {
-            string wkt = "POINT (10 46)";
+            string wkt = _wktTransformViewModel.WktSource;
             WKTReader reader = new WKTReader();
             Geometry geom = (Geometry)reader.Read(wkt);
 
@@ -67,8 +65,8 @@ namespace GeometryCalculator.Views
                 counterY = counterY + 2;
             }
 
-            var sourceProjection = ProjectionInfo.FromEpsgCode(_xYTransformViewModel.SourceProjection);
-            var targetProjection = ProjectionInfo.FromEpsgCode(_xYTransformViewModel.TargetProjection);
+            var sourceProjection = ProjectionInfo.FromEpsgCode(_wktTransformViewModel.SourceProjection);
+            var targetProjection = ProjectionInfo.FromEpsgCode(_wktTransformViewModel.TargetProjection);
 
 
             Reproject.ReprojectPoints(pointArray, zArray, sourceProjection, targetProjection, 0, (pointArray.Length / 2));
@@ -86,8 +84,9 @@ namespace GeometryCalculator.Views
             geom.GeometryChanged();
 
             var wktwriter = new WKTWriter();
-            var x = wktwriter.Write(geom);
-            Console.WriteLine(x);
+            var wktResult = wktwriter.Write(geom);
+
+            _wktTransformViewModel.WktTarget = wktResult;
         }
     }
 }

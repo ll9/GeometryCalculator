@@ -22,7 +22,7 @@ namespace GeometryCalculator.ViewModels
         public int TargetProjection { get => _targetProjection; set => SetField(ref _targetProjection, value); }
 
         public string _wktTarget;
-        [DisplayName("Ziel-X")]
+        [DisplayName("Ziel-Wkt")]
         public string WktTarget { get => _wktTarget; set => SetField(ref _wktTarget, value); }
 
 

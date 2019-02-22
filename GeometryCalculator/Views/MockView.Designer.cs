@@ -35,12 +35,10 @@
             System.Windows.Forms.Label xTargetCoordinatesLabel;
             System.Windows.Forms.Label ySourceCoordinatesLabel;
             System.Windows.Forms.Label yTargetCoordinatesLabel;
-            System.Windows.Forms.Label label1;
-            System.Windows.Forms.Label label2;
-            System.Windows.Forms.Label label3;
-            System.Windows.Forms.Label label4;
-            System.Windows.Forms.Label label5;
-            System.Windows.Forms.Label label6;
+            System.Windows.Forms.Label sourceProjectionLabel1;
+            System.Windows.Forms.Label targetProjectionLabel1;
+            System.Windows.Forms.Label wktSourceLabel;
+            System.Windows.Forms.Label wktTargetLabel;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.CalcXYButton = new System.Windows.Forms.Button();
             this.sourceProjectionComboBox = new System.Windows.Forms.ComboBox();
@@ -51,28 +49,26 @@
             this.ySourceCoordinatesTextBox = new System.Windows.Forms.TextBox();
             this.yTargetCoordinatesTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.sourceProjectionComboBox1 = new System.Windows.Forms.ComboBox();
+            this.wktTransformViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.targetProjectionComboBox1 = new System.Windows.Forms.ComboBox();
+            this.wktSourceTextBox = new System.Windows.Forms.TextBox();
+            this.wktTargetTextBox = new System.Windows.Forms.TextBox();
+            this.CalcWktButton = new System.Windows.Forms.Button();
             sourceProjectionLabel = new System.Windows.Forms.Label();
             targetProjectionLabel = new System.Windows.Forms.Label();
             xSourceCoordinatesLabel = new System.Windows.Forms.Label();
             xTargetCoordinatesLabel = new System.Windows.Forms.Label();
             ySourceCoordinatesLabel = new System.Windows.Forms.Label();
             yTargetCoordinatesLabel = new System.Windows.Forms.Label();
-            label1 = new System.Windows.Forms.Label();
-            label2 = new System.Windows.Forms.Label();
-            label3 = new System.Windows.Forms.Label();
-            label4 = new System.Windows.Forms.Label();
-            label5 = new System.Windows.Forms.Label();
-            label6 = new System.Windows.Forms.Label();
+            sourceProjectionLabel1 = new System.Windows.Forms.Label();
+            targetProjectionLabel1 = new System.Windows.Forms.Label();
+            wktSourceLabel = new System.Windows.Forms.Label();
+            wktTargetLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xYTransformViewModelBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.wktTransformViewModelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // sourceProjectionLabel
@@ -128,6 +124,42 @@
             yTargetCoordinatesLabel.Size = new System.Drawing.Size(37, 13);
             yTargetCoordinatesLabel.TabIndex = 10;
             yTargetCoordinatesLabel.Text = "Ziel-Y:";
+            // 
+            // sourceProjectionLabel1
+            // 
+            sourceProjectionLabel1.AutoSize = true;
+            sourceProjectionLabel1.Location = new System.Drawing.Point(255, 25);
+            sourceProjectionLabel1.Name = "sourceProjectionLabel1";
+            sourceProjectionLabel1.Size = new System.Drawing.Size(80, 13);
+            sourceProjectionLabel1.TabIndex = 25;
+            sourceProjectionLabel1.Text = "Quellprojektion:";
+            // 
+            // targetProjectionLabel1
+            // 
+            targetProjectionLabel1.AutoSize = true;
+            targetProjectionLabel1.Location = new System.Drawing.Point(255, 52);
+            targetProjectionLabel1.Name = "targetProjectionLabel1";
+            targetProjectionLabel1.Size = new System.Drawing.Size(73, 13);
+            targetProjectionLabel1.TabIndex = 27;
+            targetProjectionLabel1.Text = "Zielprojektion:";
+            // 
+            // wktSourceLabel
+            // 
+            wktSourceLabel.AutoSize = true;
+            wktSourceLabel.Location = new System.Drawing.Point(30, 28);
+            wktSourceLabel.Name = "wktSourceLabel";
+            wktSourceLabel.Size = new System.Drawing.Size(63, 13);
+            wktSourceLabel.TabIndex = 29;
+            wktSourceLabel.Text = "Quelle-Wkt:";
+            // 
+            // wktTargetLabel
+            // 
+            wktTargetLabel.AutoSize = true;
+            wktTargetLabel.Location = new System.Drawing.Point(486, 22);
+            wktTargetLabel.Name = "wktTargetLabel";
+            wktTargetLabel.Size = new System.Drawing.Size(50, 13);
+            wktTargetLabel.TabIndex = 31;
+            wktTargetLabel.Text = "Ziel-Wkt:";
             // 
             // groupBox1
             // 
@@ -217,19 +249,15 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(label1);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(label6);
-            this.groupBox2.Controls.Add(label2);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.comboBox2);
-            this.groupBox2.Controls.Add(label5);
-            this.groupBox2.Controls.Add(label3);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(label4);
+            this.groupBox2.Controls.Add(sourceProjectionLabel1);
+            this.groupBox2.Controls.Add(this.sourceProjectionComboBox1);
+            this.groupBox2.Controls.Add(targetProjectionLabel1);
+            this.groupBox2.Controls.Add(this.targetProjectionComboBox1);
+            this.groupBox2.Controls.Add(wktSourceLabel);
+            this.groupBox2.Controls.Add(this.wktSourceTextBox);
+            this.groupBox2.Controls.Add(wktTargetLabel);
+            this.groupBox2.Controls.Add(this.wktTargetTextBox);
+            this.groupBox2.Controls.Add(this.CalcWktButton);
             this.groupBox2.Location = new System.Drawing.Point(13, 236);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(775, 184);
@@ -237,119 +265,53 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "WKT";
             // 
-            // button1
+            // sourceProjectionComboBox1
             // 
-            this.button1.Location = new System.Drawing.Point(631, 115);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Berechnen";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.sourceProjectionComboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.wktTransformViewModelBindingSource, "SourceProjection", true));
+            this.sourceProjectionComboBox1.FormattingEnabled = true;
+            this.sourceProjectionComboBox1.Location = new System.Drawing.Point(341, 22);
+            this.sourceProjectionComboBox1.Name = "sourceProjectionComboBox1";
+            this.sourceProjectionComboBox1.Size = new System.Drawing.Size(121, 21);
+            this.sourceProjectionComboBox1.TabIndex = 26;
             // 
-            // label1
+            // wktTransformViewModelBindingSource
             // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(268, 44);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(80, 13);
-            label1.TabIndex = 17;
-            label1.Text = "Quellprojektion:";
+            this.wktTransformViewModelBindingSource.DataSource = typeof(GeometryCalculator.ViewModels.WktTransformViewModel);
             // 
-            // comboBox1
+            // targetProjectionComboBox1
             // 
-            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.xYTransformViewModelBindingSource, "SourceProjection", true));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(354, 41);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 18;
+            this.targetProjectionComboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.wktTransformViewModelBindingSource, "TargetProjection", true));
+            this.targetProjectionComboBox1.FormattingEnabled = true;
+            this.targetProjectionComboBox1.Location = new System.Drawing.Point(341, 49);
+            this.targetProjectionComboBox1.Name = "targetProjectionComboBox1";
+            this.targetProjectionComboBox1.Size = new System.Drawing.Size(121, 21);
+            this.targetProjectionComboBox1.TabIndex = 28;
             // 
-            // label2
+            // wktSourceTextBox
             // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(268, 71);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(73, 13);
-            label2.TabIndex = 19;
-            label2.Text = "Zielprojektion:";
+            this.wktSourceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.wktTransformViewModelBindingSource, "WktSource", true));
+            this.wktSourceTextBox.Location = new System.Drawing.Point(116, 25);
+            this.wktSourceTextBox.Name = "wktSourceTextBox";
+            this.wktSourceTextBox.Size = new System.Drawing.Size(121, 20);
+            this.wktSourceTextBox.TabIndex = 30;
             // 
-            // comboBox2
+            // wktTargetTextBox
             // 
-            this.comboBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.xYTransformViewModelBindingSource, "TargetProjection", true));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(354, 68);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 20;
+            this.wktTargetTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.wktTransformViewModelBindingSource, "WktTarget", true));
+            this.wktTargetTextBox.Location = new System.Drawing.Point(572, 19);
+            this.wktTargetTextBox.Name = "wktTargetTextBox";
+            this.wktTargetTextBox.Size = new System.Drawing.Size(121, 20);
+            this.wktTargetTextBox.TabIndex = 32;
             // 
-            // label3
+            // CalcWktButton
             // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(30, 45);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(50, 13);
-            label3.TabIndex = 13;
-            label3.Text = "Quelle-X:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.xYTransformViewModelBindingSource, "XSourceCoordinates", true));
-            this.textBox1.Location = new System.Drawing.Point(116, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 14;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(499, 44);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(37, 13);
-            label4.TabIndex = 21;
-            label4.Text = "Ziel-X:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.xYTransformViewModelBindingSource, "XTargetCoordinates", true));
-            this.textBox2.Location = new System.Drawing.Point(585, 41);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 20);
-            this.textBox2.TabIndex = 22;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(30, 71);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(50, 13);
-            label5.TabIndex = 15;
-            label5.Text = "Quelle-Y:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.xYTransformViewModelBindingSource, "YSourceCoordinates", true));
-            this.textBox3.Location = new System.Drawing.Point(116, 68);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 20);
-            this.textBox3.TabIndex = 16;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(499, 71);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(37, 13);
-            label6.TabIndex = 23;
-            label6.Text = "Ziel-Y:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.xYTransformViewModelBindingSource, "YTargetCoordinates", true));
-            this.textBox4.Location = new System.Drawing.Point(585, 68);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(121, 20);
-            this.textBox4.TabIndex = 24;
+            this.CalcWktButton.Location = new System.Drawing.Point(631, 115);
+            this.CalcWktButton.Name = "CalcWktButton";
+            this.CalcWktButton.Size = new System.Drawing.Size(75, 23);
+            this.CalcWktButton.TabIndex = 25;
+            this.CalcWktButton.Text = "Berechnen";
+            this.CalcWktButton.UseVisualStyleBackColor = true;
+            this.CalcWktButton.Click += new System.EventHandler(this.CalcWktButton_Click);
             // 
             // MockView
             // 
@@ -365,6 +327,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.xYTransformViewModelBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.wktTransformViewModelBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -381,12 +344,11 @@
         private System.Windows.Forms.TextBox ySourceCoordinatesTextBox;
         private System.Windows.Forms.TextBox yTargetCoordinatesTextBox;
         private System.Windows.Forms.Button CalcXYButton;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button CalcWktButton;
+        private System.Windows.Forms.BindingSource wktTransformViewModelBindingSource;
+        private System.Windows.Forms.ComboBox sourceProjectionComboBox1;
+        private System.Windows.Forms.ComboBox targetProjectionComboBox1;
+        private System.Windows.Forms.TextBox wktSourceTextBox;
+        private System.Windows.Forms.TextBox wktTargetTextBox;
     }
 }
