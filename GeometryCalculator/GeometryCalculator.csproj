@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ViewModels\WktTransformViewModel.cs" />
     <Compile Include="ViewModels\XYTransformViewModel.cs" />
     <Compile Include="Views\Form1.cs">
       <SubType>Form</SubType>
